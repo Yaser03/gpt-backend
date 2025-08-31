@@ -1,4 +1,7 @@
 flask
 flask-cors
 openai
+fastapi
+uvicorn
+openai
 
