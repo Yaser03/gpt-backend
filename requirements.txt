@@ -2,6 +2,6 @@ flask
 flask-cors
 openai
 fastapi
-uvicorn
+gunicorn
 openai
 
