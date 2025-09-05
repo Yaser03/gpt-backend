@@ -2,5 +2,5 @@ flask
 flask-cors
 openai
 fastapi
+openai>=1.0.0
 gunicorn
-
