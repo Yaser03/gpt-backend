@@ -6,21 +6,30 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS
 
-# Rest of your code...
-
-# Set up OpenAI API key from environment variable
+# OpenAI API key from Render environment
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route('/api/ask', methods=['POST'])
 def ask():
     data = request.get_json()
-    question = data.get('question')
+    user_input = data.get('question')
+
+    if not user_input:
+        return jsonify({"error": "No input provided"}), 400
+
+    # --- MODIFY THE PROMPT HERE ---
+    # Example: prepend instructions or context
+    modified_prompt = (
+        f"You are a helpful assistant providing feedback.\n"
+        f"Student input: \"{user_input}\"\n"
+        f"Please respond clearly and concisely."
+    )
 
     try:
-        # Call OpenAI GPT API with the user's question
+        # Call GPT API with the modified prompt
         response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=question,
+            model="text-davinci-003",
+            prompt=modified_prompt,
             max_tokens=150
         )
         answer = response.choices[0].text.strip()
