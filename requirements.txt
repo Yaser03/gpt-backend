@@ -3,5 +3,4 @@ flask-cors
 openai
 fastapi
 gunicorn
-openai
 
