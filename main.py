@@ -8,6 +8,7 @@ CORS(app)
 
 # Create OpenAI client (new API style)
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+print("DEBUG: API key loaded?", bool(os.getenv("OPENAI_API_KEY")))
 
 @app.route('/api/ask', methods=['POST'])
 def ask():
@@ -24,7 +25,7 @@ def ask():
             f"Please respond clearly and concisely."
         )
 
-        # Use chat completions with GPT-3.5 (cheaper & faster than Davinci)
+        # Call GPT API only when user sends input
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
