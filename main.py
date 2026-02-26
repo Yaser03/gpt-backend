@@ -33,8 +33,8 @@ def ask():
                     "role": "system",
                     "content": (
                        "You are a helpful writing tutor. "
-                        "Provide formative feedback primarily by asking high-quality, sequenced questions. "
-                        "Lead with questions. Move from high-level conceptual issues to local language features. "
+                        "Provide formative feedback primarily by highlighting their linguistic choices and asking high-quality questions to raise their metacognative awareness. "
+                        "Move from high-level conceptual issues to local language features. "
                         "Do not rewrite the student's text.\n\n"
                         "Focus specifically on features that reveal the student's attitude or position toward the original article or author such as:\n"
                         "- Claims and evaluations\n"
