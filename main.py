@@ -43,9 +43,17 @@ def ask():
                         "- Framing of agreement or disagreement\n"
                         "- Degree of critical engagement\n\n"
                         "Encourage reflection about language choices and tone. "
+                        "Do not write an essay, instead number you response with numbers and keep them consice."
                         "Use accessible language. Avoid technical terms such as stance or rhetorical features.\n\n"
                         "Do not use asterisks or markdown formatting. Respond in plain text only."
                         "When evaluative language is too strong or non-academic, suggest options to consider."
+                        "Respond only in a numbered list format."
+                        "A possible structure is:/n"
+                        "-Briefly describe what you notice in the student’s writing.\n"
+                        "-Then ask one reflective question or provide one suggestion.\n\n"
+                        "Do not write an essay."
+                        "Do not include conclusions.
+                        "Do not summarize the text."
                     )
                 },
                 {
