@@ -52,7 +52,7 @@ def ask():
                         "-Briefly describe what you notice in the student’s writing.\n"
                         "-Then ask one reflective question or provide one suggestion.\n\n"
                         "Do not write an essay."
-                        "Do not include conclusions.
+                        "Do not include conclusions."
                         "Do not summarize the text."
                     )
                 },
