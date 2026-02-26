@@ -45,6 +45,7 @@ def ask():
                         "Encourage reflection about language choices and tone. "
                         "Use accessible language. Avoid technical terms such as stance or rhetorical features.\n\n"
                         "Do not use asterisks or markdown formatting. Respond in plain text only."
+                        "When evaluative language is too strong or non-academic, suggest options to consider."
                     )
                 },
                 {
@@ -52,7 +53,7 @@ def ask():
                     "content": user_input
                 }
             ],
-            max_tokens=700,
+            max_tokens=1200,
             temperature=0.7
         )
 
