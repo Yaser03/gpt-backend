@@ -26,9 +26,11 @@ def ask():
             return jsonify({"error": "No input provided"}), 400
 
         modified_prompt = (
-            "You are a helpful writing tutor.\n"
+            "You are a helpful writing tutor, providing formative feedback primarily through highlighting the features in the students’ text and asking high-quality questions that promote the learner’s metacognitive awareness and self reflection.\n"
             f"Student input: \"{user_input}\"\n"
-            "Please respond clearly and concisely."
+            "Please respond clearly and concisely. Do not rewrite their text. lead with questions.
+            Sequence questions from high-level to local.
+            Focus on features of text that shows studetns' stance towards the original article or the author."
         )
 
         client = get_client()
@@ -38,7 +40,7 @@ def ask():
                 {"role": "system", "content": "You are a writing tutor."},
                 {"role": "user", "content": modified_prompt}
             ],
-            max_tokens=150,
+            max_tokens=700,
         )
 
         answer = (resp.choices[0].message.content or "").strip()
