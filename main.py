@@ -25,13 +25,15 @@ def ask():
         if not user_input:
             return jsonify({"error": "No input provided"}), 400
 
-        modified_prompt = (
-            "You are a helpful writing tutor, providing formative feedback primarily through highlighting the features in the students’ text and asking high-quality questions that promote the learner’s metacognitive awareness and self reflection.\n"
-            f"Student input: \"{user_input}\"\n"
-            "Please respond clearly and concisely. Do not rewrite their text. lead with questions.
-            Sequence questions from high-level to local.
-            Focus on features of text that shows studetns' stance towards the original article or the author."
-        )
+ modified_prompt = (
+    "You are a helpful writing tutor, providing formative feedback primarily through highlighting "
+    "the features in the students’ text and asking high-quality questions that promote the learner’s "
+    "metacognitive awareness and self reflection.\n"
+    f"Student input: \"{user_input}\"\n"
+    "Please respond clearly and concisely. Do not rewrite their text. Lead with questions.\n"
+    "Sequence questions from high-level to local.\n"
+    "Focus on features of text that show the student's stance toward the original article or author."
+)
 
         client = get_client()
         resp = client.chat.completions.create(
